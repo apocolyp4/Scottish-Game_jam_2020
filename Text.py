@@ -1,34 +1,25 @@
 import appgamekit as agk
 from Color import Color
 
-class Sprite:
-    def __init__(self, image, x, y, width, height, angle, depth, centered, visible):
-        if isinstance(image, str):
-            if image != "NULL":
-                self.image = agk.load_image(image)
-        else:
-            self.image = image
-
-        if image != "NULL":
-            self.id = agk.create_sprite(self.image)
-
+class Text:
+    def __init__(self, text, color, size, x, y, depth, centered, visible):
+        self.text = text
         self.x = x
         self.y = y
 
         self.old_x = x
         self.old_y = y
 
-        self.width = width
-        self.height = height
+        self.size = size
         self.depth = depth
-        self.angle = angle
+        self.angle = 0
         self.centered = centered
         self.visible = visible
         self.scale = 1.0
         self.color = Color(255, 255, 255, 255)
 
-        if image != "NULL":
-            self.update()
+        self.id = agk.create_text(self.text)
+        self.set_color(color)
 
     def update(self):
 
@@ -86,24 +77,12 @@ class Sprite:
             agk.set_sprite_visible(self.id, 0)
 
     def get_width(self):
-        return self.width * self.scale
+        width = agk.get_text_total_width(self.id)
+        return width
 
     def get_height(self):
-        return self.height * self.scale
-
-    def set_proportional_size_by_width(self, width):
-        self.scale = 1.0
-        self.width = width
-        image_ratio = agk.get_image_width(self.image) / agk.get_image_height(self.image)
-        self.height = self.width * image_ratio
-        self.resize(self.width, self.height)
-
-    def set_proportional_size_by_height(self, height):
-        self.scale = 1.0
-        self.height = height
-        image_ratio = agk.get_image_height(self.image) / agk.get_image_width(self.image)
-        self.width = self.height * image_ratio
-        self.resize(self.width, self.height)
+        height = agk.get_text_total_height(self.id)
+        return height
 
     def get_centre_x(self):
         x = agk.get_sprite_x(self.id)
@@ -124,4 +103,4 @@ class Sprite:
 
     def set_color(self, color):
         self.color = color
-        agk.set_sprite_color(self.id, self.color.red, self.color.green, self.color.blue, self.color.alpha)
+        agk.set_text_color(self.id, self.color.red, self.color.green, self.color.blue, self.color.alpha)

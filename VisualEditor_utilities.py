@@ -1,6 +1,6 @@
 import appgamekit as agk
 from VisualEditor_properties import Resolution, Image
-
+from VisualEditor_object import Object
 
 def get_id(self, entity_name, scene_id):
     if scene_id < 0 or scene_id > len(self.scenes) - 1:
@@ -263,7 +263,7 @@ def load_sub_image(self, s_image, sub_image):
 
     i_main_image = 0
 
-    for image in self.VisualEditor_Images:
+    for i, image in self.VisualEditor_Images:
         if image.sImage == s_image:
             if image.id == -1:
                 image.id = agk.load_image(s_image)
@@ -279,3 +279,27 @@ def load_sub_image(self, s_image, sub_image):
     self.VisualEditor_SubImages[-1].id = agk.load_sub_image(i_main_image, sub_image)
 
     return self.VisualEditor_SubImages[-1].id
+
+
+def get_unique_object_name(object_type, scene_objects):
+    object_name = ""
+
+    scene_object_names = []
+
+    for scene_object in scene_objects:
+        if scene_object.self_type == object_type:
+            scene_object_names.insert(object.uid)
+
+    object_no = 0
+    name_accepted = False
+
+    while not name_accepted:
+        object_no += 1
+        name_accepted = True
+        object_name = object_type + " " + str(object_no)
+
+        for scene_object_name in scene_object_names:
+            if object_name == scene_object_name:
+                name_accepted = False
+
+    return object_name

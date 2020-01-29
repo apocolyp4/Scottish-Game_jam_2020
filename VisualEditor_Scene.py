@@ -40,7 +40,7 @@ def setup_scenes(self):
     count = agk.count_string_tokens(self.VisualEditor_SceneColours, " ")
 
     if count % 3 == 0:
-        index = 1
+        index = 0
         scene = 0
         for i in range(0, int(count / 3)):
             self.scenes[scene].clear_colour_red = int(agk.get_string_token(self.VisualEditor_SceneColours, " ", index + 0))
@@ -96,30 +96,34 @@ def set_scene(self, scene_id):
 
     for scene_entity in self.scenes[scene_id].entities:
 
-        entity = self.VisualEditor_Entities[scene_entity.index]
-        self.overrideIndex = 0
+        try:
+            entity = self.VisualEditor_Entities[scene_entity.index]
+            self.overrideIndex = 0
 
-        for j in range(0, len(entity.overrides)):
-            if self.VisualEditor_Width == entity.overrides[j].width and self.VisualEditor_Height == entity.overrides[j].height:
-                self.overrideIndex = j
-                break
+            for j in range(0, len(entity.overrides)):
+                if self.VisualEditor_Width == entity.overrides[j].width and self.VisualEditor_Height == entity.overrides[j].height:
+                    self.overrideIndex = j
+                    break
 
-        kind = scene_entity.kind
+            kind = scene_entity.kind
 
-        if kind == self.constants.VISUAL_EDITOR_SPRITE:
-            set_scene_sprite(self, scene_entity)
+            if kind == self.constants.VISUAL_EDITOR_SPRITE:
+                set_scene_sprite(self, scene_entity)
 
-        elif kind == self.constants.VISUAL_EDITOR_TEXT:
-            set_scene_text(self, scene_entity)
+            elif kind == self.constants.VISUAL_EDITOR_TEXT:
+                set_scene_text(self, scene_entity)
 
-        elif kind == self.constants.VISUAL_EDITOR_EDIT_BOX:
-            set_scene_text_box(self, scene_entity)
+            elif kind == self.constants.VISUAL_EDITOR_EDIT_BOX:
+                set_scene_text_box(self, scene_entity)
 
-        elif kind == self.constants.VISUAL_EDITOR_VIRTUAL_BUTTON:
-            set_scene_virtual_button(self, scene_entity)
+            elif kind == self.constants.VISUAL_EDITOR_VIRTUAL_BUTTON:
+                set_scene_virtual_button(self, scene_entity)
 
-        elif kind == self.constants.VISUAL_EDITOR_PARTICLES:
-            set_scene_virtual_particles(self, scene_entity)
+            elif kind == self.constants.VISUAL_EDITOR_PARTICLES:
+                set_scene_virtual_particles(self, scene_entity)
+
+        except:
+            print("")
 
 
 def find_font(self, s_font):

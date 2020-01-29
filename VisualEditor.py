@@ -1,9 +1,10 @@
 import appgamekit as agk
-from VisualEditor_utilities import *
+
 from VisualEditor_properties import *
 from VisualEditor_load import *
 from VisualEditor_Scene import *
 from VisualEditor_utilities import *
+
 
 
 class VisualEditor:

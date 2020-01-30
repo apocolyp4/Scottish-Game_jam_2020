@@ -8,8 +8,6 @@ class ImageButton:
     def __init__(self, image_name, text):
         self.name = ""
         self.id = ""
-        self.sprite = -1
-        self. text = 0
         self.images = []
         self.depth = 0
         self.active = True
@@ -32,6 +30,7 @@ class ImageButton:
         self.height = 50
         self.pressed_alpha = 0
 
+
         self.state = False
         self.pressed = False
         self.released = False
@@ -44,11 +43,6 @@ class ImageButton:
         self.border_sprites = []
 
         self.image_color = Color(255, 255, 0, 255)
-        self.text_color = Color(255, 255, 0, 255)
-        self.text_size = 0
-        self.text_offset_x = 0
-        self.text_offset_y = 0
-
         self.previous_state = False
         self.mode = 0
 
@@ -62,19 +56,21 @@ class ImageButton:
             self.height = agk.get_image_weight(image_no)
 
         self.images.append(image_no)
-        self.sprite = agk.create_sprite(image_no)
 
+        self.depth = 0
         self.sprite = Sprite(image_no, 0, 0, self.width, self.height, self.angle, self.depth, False, True)
         self.sprite.set_color(self.image_color)
         self.pressed_frame = 0
         self.pressed_alpha = 100
         self.alpha = 255
 
-        self.text = agk.create_text(text)
-        self.text_size = 48
-        agk.set_text_size(self.text, self.text_size)
-        agk.set_text_color(self.text, 0, 0, 0, 255)
+        self.text_offset_x = 0
+        self.text_offset_y = 0
+        text_size = 48
+        text_color = Color(0, 0, 0, 255)
 
+
+        self.text = Text(text, text_color, text_size, 0, 0, self.depth, 1, True)
         self.border_visible = 0
         self.border_size = 5
 
@@ -87,7 +83,7 @@ class ImageButton:
             self.border_sprites.append(border_sprite)
 
         self.update_if_pressed = True
-        self.set_depth(0)
+
 
     def make_switch(self, x, y, width, height, alignment, depth ):
         self.is_switch = True
@@ -104,8 +100,8 @@ class ImageButton:
 
     def set_depth(self, depth):
         self.depth = depth
-        self.sprite.set_depth(depth)
-        agk.set_text_depth(self.text, self.depth)
+        self.sprite.set_depth(self.depth)
+        self.text.set_depth(self.depth)
 
         for border_sprite in self.border_sprites:
             agk.set_sprite_depth(border_sprite, self.depth)

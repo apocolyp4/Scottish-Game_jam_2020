@@ -6,6 +6,8 @@ from networking import Network
 from Text import Text
 
 with agk.Application():
+    status = 'client'
+
     #setup the editor
 
     vis_editor = VisualEditor(0)
@@ -66,10 +68,42 @@ with agk.Application():
     test_text = Text("cunty baws", Color(0, 0, 0, 255), 45, 100, 100, 0, True, True)
     test_text.set_string("mubs")
 
-    game_network = Network("Awesome Dave", "10.241.90.69", 45000)
-    game_network.client()
+    if status is 'client':
+        #connection as client
+        game_network = Network("Awesome Rich", "10.241.90.69", 45000)
+        game_network.client()
+        iType = 1
+        State = 1
+    if status is 'server':
+        #connection as server
+        network_id = agk.host_network("AGK Test Game", "Player 1", 45000)
+        iType = 0
+        State = 1
+
     while True:
-        game_network.update()
         agk.sync()
+
+        if iType is 0:
+            x = 11
+            y = 12
+            cmessage = agk.create_network_message()
+            agk.add_network_message_float(cmessage, x)
+            agk.add_network_message_float(cmessage, y)
+            agk.send_network_message(network_id, 0, cmessage)
+
+        if iType is 1:
+            game_network.update()
+            cmessage = agk.get_network_message(100001)
+            while cmessage != 0:
+                x = agk.get_network_message_float(cmessage)
+                y = agk.get_network_message_float(cmessage)
+
+                #add update code here
+                print(x)
+                print(y)
+
+                agk.delete_network_message(cmessage)
+                cmessage = agk.get_network_message(100001)
+
         if agk.get_raw_key_pressed(27):
             break

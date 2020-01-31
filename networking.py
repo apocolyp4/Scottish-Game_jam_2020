@@ -16,11 +16,13 @@ class Network:
         network_id = agk.host_network("AGK Test Game", self.name, 45000)
         self.type = 0
         self.state = 1
+        return network_id
 
     def client(self):
         network_id = agk.join_network_ip(self.target_ip, 45000, self.name)
         self.type = 0
         self.state = 1
+        return network_id
 
     def update(self):
         pass

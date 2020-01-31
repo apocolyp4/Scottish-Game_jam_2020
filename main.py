@@ -5,6 +5,7 @@ from VisualEditor import VisualEditor
 from networking import Network
 from Text import Text
 from Sprite import Sprite
+import json
 
 with agk.Application():
     status = 'server'
@@ -57,11 +58,13 @@ with agk.Application():
             # For the handling of incoming data
             # from the other player and the
             # manipulation of sprites on the screen
+            user_detail = {"sprite_name": "fsds", "sprite_x": 0, "sprite_y": 0, "sprite_z": 0, "health": 123}
             x = test_sprite.get_centre_x()
             y = test_sprite.get_centre_y()
             cmessage = agk.create_network_message()
             agk.add_network_message_float(cmessage, x)
             agk.add_network_message_float(cmessage, y)
+            agk.add_network_message_string(cmessage, json.dumps(user_detail))
 
             agk.send_network_message(network_id, 0, cmessage)
 
@@ -75,6 +78,14 @@ with agk.Application():
                 # manipulating sprites
                 x = agk.get_network_message_float(cmessage)
                 y = agk.get_network_message_float(cmessage)
+                player_date = agk.get_network_message_string(cmessage)
+                player_obj = json.loads(player_date)
+                print(player_obj)
+                print(player_obj["sprite_name"])
+                print(player_obj["sprite_x"])
+                print(player_obj["sprite_y"])
+                print(player_obj["sprite_z"])
+                print(player_obj["health"])
                 print(str(x) + " " + str(y))
                 test_sprite.set_position(x, y)
                 # Replace with message parsing code

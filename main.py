@@ -51,7 +51,7 @@ with agk.Application():
     print("")
     print("Path")
 
-    path = search_tree.get_path("node 1", "node 6")
+    path = search_tree.get_path("Node 1", "Node 6")
 
     node_text = ""
     for node in path:

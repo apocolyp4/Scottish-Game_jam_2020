@@ -87,7 +87,7 @@ with agk.Application():
                 print(player_obj["sprite_z"])
                 print(player_obj["health"])
                 print(str(x) + " " + str(y))
-                test_sprite.set_position(x, y)
+                test_sprite.set_position(player_obj["sprite_x"], player_obj["sprite_y"])
                 # Replace with message parsing code
 
                 agk.delete_network_message(cmessage)

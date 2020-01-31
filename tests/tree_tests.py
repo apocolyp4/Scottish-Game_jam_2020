@@ -1,7 +1,21 @@
 import unittest
 from SearchTree import SearchTree
+from Node import Node
 
 class MyTestCase(unittest.TestCase):
+    def test_node(self):
+        search_tree = SearchTree()
+        node1 = search_tree.new_node("Node 1", 50, 0, True)
+        node2 = search_tree.new_node("Node 2", 10, 30, True)
+        node3 = search_tree.new_node("Node 3", 70, 30, True)
+
+        node1.add_child(node2)
+        node1.add_child(node3)
+
+        self.assertEqual(node1.id, 'Node 1')
+        self.assertEqual(node1.child_nodes[0].id, 'Node 2')
+        self.assertEqual(node1.child_nodes[1].id, 'Node 3')
+
     def test_something(self):
         search_tree = SearchTree()
         # create_node(Node Name (String), X co-oridinate (Integer), Y co-oridinate (Integer), Accessible (Bool))
@@ -38,16 +52,11 @@ class MyTestCase(unittest.TestCase):
 
         print("")
         print("Path")
-
         path = search_tree.get_path("Node 1", "Node 7")
-
         node_text = ""
         for node in path:
             node_text += node.id + " "
-
         print(node_text)
-
-
         self.assertEqual("Node 1 Node 3 Node 5 Node 6 Node 7 ", node_text)
 
 

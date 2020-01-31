@@ -37,7 +37,7 @@ class Sprite:
 
         self.set_centered(self.centered)
         self.resize(self.width, self.height)
-        self.position(self.x, self.y)
+        self.set_position(self.x, self.y)
         self.set_depth(self.depth)
         self.set_visible(self.visible)
 
@@ -45,10 +45,9 @@ class Sprite:
         self.width = width
         self.height = height
         agk.set_sprite_size(self.id, self.width, self.height)
-        self.position(self.x, self.y)
+        self.set_position(self.x, self.y)
 
-
-    def position(self, x, y):
+    def set_position(self, x, y):
         self.old_x = self.x
         self.old_y = self.y
         self.x = x

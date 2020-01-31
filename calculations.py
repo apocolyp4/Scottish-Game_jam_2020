@@ -7,9 +7,7 @@ def get_distance(x1, y1, x2, y2):
     c = abs(y1 - y2)
 
     distance = math.sqrt(pow(b, 2) + pow(c, 2))
-
     return distance
-
 
 def get_angle(x1, y1, x2, y2):
     angle = atan2(y1 - y2, x1 - x2)

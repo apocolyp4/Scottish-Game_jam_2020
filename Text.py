@@ -11,46 +11,48 @@ class Text:
         self.old_y = y
 
         self.size = size
+        self.width = 0
+        self.height = 0
         self.depth = depth
         self.angle = 0
         self.centered = centered
         self.visible = visible
         self.scale = 1.0
-        self.color = Color(255, 255, 255, 255)
+        self.color = color
 
         self.id = agk.create_text(self.text)
-        self.set_color(color)
+        self.update()
 
     def update(self):
-
         self.old_x = self.x
         self.old_y = self.y
 
+        self.set_color(self.color)
         self.set_centered(self.centered)
-        self.resize(self.width, self.height)
-        self.position(self.x, self.y)
+        self.set_size(self.size)
+        self.set_position(self.x, self.y)
         self.set_depth(self.depth)
         self.set_visible(self.visible)
 
-    def resize(self, width, height):
-        self.width = width
-        self.height = height
-        agk.set_sprite_size(self.id, self.width, self.height)
-        self.position(self.x, self.y)
+    def set_size(self, size):
+        self.size = size
+        agk.set_text_size(self.id, self.size)
+        self.set_position(self.x, self.y)
 
-
-    def position(self, x, y):
+    def set_position(self, x, y):
         self.old_x = self.x
         self.old_y = self.y
-        self.x = x
-        self.y = y
 
         if self.centered:
-            centered_x = self.x - ((self.width  * self.scale) / 2)
-            centered_y = self.y - ((self.height * self.scale) / 2)
-            agk.set_sprite_position(self.id, centered_x, centered_y)
+            centred_x = x - ((self.get_width() * self.scale) / 2)
+            centred_y = y - ((self.get_height() * self.scale) / 2)
+            agk.set_text_position(self.id, centred_x, centred_y)
         else:
-            agk.set_sprite_position(self.id, self.x, self.y)
+            agk.set_text_position(self.id, centred_x, centred_y)
+
+        self.x = x
+        self.y = y
+        agk.set_text_position(self.id, x, y)
 
     def set_angle(self, angle):
         self.angle = angle
@@ -58,7 +60,7 @@ class Text:
 
     def set_depth(self, depth):
         self.depth = depth
-        agk.set_sprite_depth(self.id, self.depth)
+        agk.set_text_depth(self.id, self.depth)
 
     def set_scale(self, scale):
         self.scale = scale
@@ -67,22 +69,22 @@ class Text:
 
     def set_centered(self, centered):
         self.centered = centered
-        agk.set_sprite_position(self.id, self.x, self.y)
+        self.set_position(self.x, self.y)
 
     def set_visible(self, visible):
         self.visible = visible
         if self.visible:
-            agk.set_sprite_visible(self.id, 1)
+            agk.set_text_visible(self.id, 1)
         else:
-            agk.set_sprite_visible(self.id, 0)
+            agk.set_text_visible(self.id, 0)
 
     def get_width(self):
-        width = agk.get_text_total_width(self.id)
-        return width
+        self.width = agk.get_text_total_width(self.id)
+        return self.width
 
     def get_height(self):
-        height = agk.get_text_total_height(self.id)
-        return height
+        self.height = agk.get_text_total_height(self.id)
+        return self.height
 
     def get_centre_x(self):
         x = agk.get_sprite_x(self.id)
@@ -104,3 +106,7 @@ class Text:
     def set_color(self, color):
         self.color = color
         agk.set_text_color(self.id, self.color.red, self.color.green, self.color.blue, self.color.alpha)
+
+    def set_string(self, text):
+        self.text = text
+        agk.set_text_string(self.id, self.text)

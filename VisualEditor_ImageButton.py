@@ -9,7 +9,6 @@ class ImageButton:
         self.name = ""
         self.id = ""
         self.sprite = -1
-        self. text = 0
         self.images = []
         self.depth = 0
         self.active = True
@@ -44,11 +43,6 @@ class ImageButton:
         self.border_sprites = []
 
         self.image_color = Color(255, 255, 0, 255)
-        self.text_color = Color(255, 255, 0, 255)
-        self.text_size = 0
-        self.text_offset_x = 0
-        self.text_offset_y = 0
-
         self.previous_state = False
         self.mode = 0
 
@@ -70,10 +64,11 @@ class ImageButton:
         self.pressed_alpha = 100
         self.alpha = 255
 
-        self.text = agk.create_text(text)
         self.text_size = 48
-        agk.set_text_size(self.text, self.text_size)
-        agk.set_text_color(self.text, 0, 0, 0, 255)
+        self.text_color = Color(255, 255, 0, 255)
+        self.text_offset_x = 0
+        self.text_offset_y = 0
+        self.text = Text(text, self.text_color, self.text_size, 0, 0, self.depth, True, True)
 
         self.border_visible = 0
         self.border_size = 5
@@ -105,7 +100,7 @@ class ImageButton:
     def set_depth(self, depth):
         self.depth = depth
         self.sprite.set_depth(depth)
-        agk.set_text_depth(self.text, self.depth)
+        self.text.set_depth(self.depth)
 
         for border_sprite in self.border_sprites:
             agk.set_sprite_depth(border_sprite, self.depth)
@@ -119,13 +114,12 @@ class ImageButton:
         else:
             self.sprite.centered = 0
 
-        self.sprite.position(x, y)
+        self.sprite.set_position(x, y)
 
-        """""
-        self.text_x = self.sprite.get_centre_x() + self.text_offset_x
-        self.text_y = self.sprite.get_centre_y() + self.text_offset_y
-        SetTextCenterPosition(text_id, text_x, text_y)
-        """
+        x = self.sprite.get_centre_x() + self.text_offset_x
+        y = self.sprite.get_centre_y() + self.text_offset_y
+        self.text.set_position(x, y)
+
 
     def update_position(self):
         self.set_image_button_position(self.x, self.y)
@@ -133,3 +127,7 @@ class ImageButton:
     def set_button_color(self, color):
         self.image_color = color
         self.sprite.set_color(self.image_color)
+
+    def set_text_color(self, color):
+        self.text_color = color
+        self.text.set_color(color)

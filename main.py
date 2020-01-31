@@ -2,15 +2,13 @@ import appgamekit as agk
 from SearchTree import SearchTree
 from VisualEditor_ImageButton import *
 from VisualEditor import VisualEditor
-
+from Text import Text
 
 with agk.Application():
-
     #setup the editor
 
     vis_editor = VisualEditor(0)
     #vis_editor.open_scene(0)
-
     #sprite = vis_editor.get_entity_id("sprite 8", 0)
     #kind = vis_editor.get_entity_kind("sprite 8", 0)
 
@@ -59,8 +57,13 @@ with agk.Application():
 
     print(node_text)
 
-    test_button = ImageButton("", "SHITE")
-    test_button.set_position(0, 0)
+    # test_button = ImageButton("", "SHITE")
+    # test_button.set_position(0, 0)
+    # text_color = Color(255, 0, 0, 255)
+
+
+    test_text = Text("cunty baws", Color(0, 0, 0, 255), 45, 100, 100, 0, True, True)
+    test_text.set_string("mubs")
 
     while True:
 

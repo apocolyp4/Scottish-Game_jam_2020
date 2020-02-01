@@ -1,6 +1,8 @@
 import appgamekit as agk
 from VisualEditor_Image import *
 from VisualEditor_utilities import *
+from VisualEditor_ImageButton import ImageButton
+from Color import Color
 # from VisualEditor_properties import Resolution
 
 def set_scene_sprite(self, scene_entity):
@@ -73,6 +75,17 @@ def set_scene_text(self, scene_entity):
         agk.set_text_font(scene_entity.id, font)
     else:
         agk.use_new_default_fonts(1)
+
+def set_scene_image_button(self, scene_entity):
+
+    entity = self.VisualEditor_Entities[scene_entity.index]
+    if entity.sImage == "Images/blank.jpg":
+        entity.sImage = ""
+
+    scene_entity.id = ImageButton(entity.sImage, entity.sName)
+    scene_entity.id.set_position(entity.x, entity.y)
+    scene_entity.id.set_size(entity.sizeX, entity.sizeY)
+    self.VisualEditor_image_buttons.append(scene_entity.id)
 
 
 def set_scene_text_box(self, scene_entity):

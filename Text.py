@@ -10,6 +10,7 @@ class Text:
         self.old_x = x
         self.old_y = y
 
+        self.fixed_to_screen = False
         self.size = size
         self.width = 0
         self.height = 0
@@ -52,10 +53,9 @@ class Text:
             centred_y = y - ((self.get_height() * self.scale) / 2)
             agk.set_text_position(self.id, centred_x, centred_y)
         else:
-            agk.set_text_position(self.id, centred_x, centred_y)
-        self.x = x
-        self.y = y
-        agk.set_text_position(self.id, self.x, self.y)
+            self.x = x
+            self.y = y
+            agk.set_text_position(self.id, self.x, self.y)
 
     def set_angle(self, angle):
         self.angle = angle
@@ -102,6 +102,14 @@ class Text:
         centre_y = self.get_centre_y()
         return centre_x, centre_y
 
+    def get_angle(self):
+        angle = agk.get_text_char_angle(self.id, 0)
+        return angle
+
+    def set_alpha(self, alpha):
+        self.color.alpha = alpha
+        self.set_color(self.color)
+
     def set_color(self, color):
         self.color = color
         agk.set_text_color(self.id, self.color.red, self.color.green, self.color.blue, self.color.alpha)
@@ -109,3 +117,10 @@ class Text:
     def set_string(self, text):
         self.text = text
         agk.set_text_string(self.id, self.text)
+
+    def set_fixed_to_screen(self, fixed):
+        self.fixed_to_screen = fixed
+        agk.fix_text_to_screen(self.id, self.fixed_to_screen)
+
+    def delete(self):
+        agk.delete_text(self.id)

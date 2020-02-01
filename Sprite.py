@@ -3,20 +3,19 @@ from Color import Color
 
 class Sprite:
     def __init__(self, image, x, y, width, height, angle, depth, centered, visible):
-        if isinstance(image, str):
-            if image != "NULL":
-                self.image = agk.load_image(image)
+
+        if image == -1:
+            self.image = agk.create_image_color(255, 255, 255, 255)
         else:
             self.image = image
 
-        if image != "NULL":
-            self.id = agk.create_sprite(self.image)
-
+        self.id = agk.create_sprite(self.image)
         self.x = x
         self.y = y
 
         self.old_x = x
         self.old_y = y
+        self.fixed_to_screen = False
 
         self.width = width
         self.height = height
@@ -54,7 +53,7 @@ class Sprite:
         self.y = y
 
         if self.centered:
-            centered_x = self.x - ((self.width  * self.scale) / 2)
+            centered_x = self.x - ((self.width * self.scale) / 2)
             centered_y = self.y - ((self.height * self.scale) / 2)
             agk.set_sprite_position(self.id, centered_x, centered_y)
         else:
@@ -71,7 +70,7 @@ class Sprite:
     def set_scale(self, scale):
         self.scale = scale
         agk.set_sprite_size(self.id, self.width * self.scale, self.height * self.scale)
-        self.position(self.x, self.y)
+        self.set_position(self.x, self.y)
 
     def set_centered(self, centered):
         self.centered = centered
@@ -116,6 +115,18 @@ class Sprite:
         centre_y = y + half_height
         return centre_y
 
+    def get_bottom_y(self):
+        y = agk.get_sprite_y(self.id)
+        height = agk.get_sprite_height(self.id)
+        bottom_y = y + height
+        return bottom_y
+
+    def get_right_x(self):
+        x = agk.get_sprite_x(self.id)
+        width = agk.get_sprite_width(self.id)
+        right_x = x + width
+        return right_x
+
     def get_centre_position(self):
         centre_x = self.get_centre_x()
         centre_y = self.get_centre_y()
@@ -124,3 +135,32 @@ class Sprite:
     def set_color(self, color):
         self.color = color
         agk.set_sprite_color(self.id, self.color.red, self.color.green, self.color.blue, self.color.alpha)
+
+    def set_fixed_to_screen(self, fixed):
+        self.fixed_to_screen = fixed
+        agk.fix_sprite_to_screen(self.id, self.fixed_to_screen)
+
+    def delete(self):
+        if agk.get_image_exists(self.image):
+            agk.delete_image(self.image)
+        agk.delete_sprite(self.id)
+
+    def set_size(self, width, height):
+        self.width = width
+        self.height = height
+        agk.set_sprite_size(self.id, self.width, self.height)
+
+    def set_width(self, width):
+        self.width = width
+        agk.set_sprite_size(self.id, self.width, self.height)
+
+    def set_height(self, height):
+        self.height = height
+        agk.set_sprite_size(self.id, self.width, self.height)
+
+    def set_alpha(self, alpha):
+        self.color.alpha = alpha
+        self.set_color(self.color)
+
+    def get_angle(self):
+        return self.angle

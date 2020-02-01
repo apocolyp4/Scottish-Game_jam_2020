@@ -108,10 +108,23 @@ def set_scene(self, scene_id):
             kind = scene_entity.kind
 
             if kind == self.constants.VISUAL_EDITOR_SPRITE:
+                entity = self.VisualEditor_Entities[scene_entity.index]
+                if entity.sName[0:3] == "IB:":
+                    entity.sName = entity.sName[3:]
+                    kind = self.constants.VISUAL_EDITOR_IMAGE_BUTTON
+
+            # if agk.left(entity_name, 3) == "IB:":
+            #     print(entity_name)
+            # else:
+
+            if kind == self.constants.VISUAL_EDITOR_SPRITE:
                 set_scene_sprite(self, scene_entity)
 
             elif kind == self.constants.VISUAL_EDITOR_TEXT:
                 set_scene_text(self, scene_entity)
+
+            elif kind == self.constants.VISUAL_EDITOR_IMAGE_BUTTON:
+                set_scene_image_button(self, scene_entity)
 
             elif kind == self.constants.VISUAL_EDITOR_EDIT_BOX:
                 set_scene_text_box(self, scene_entity)
@@ -147,16 +160,26 @@ def find_font(self, s_font):
 def delete_scene(self):
     scene = self.manager.currentScene
 
+    for image_button in self.VisualEditor_image_buttons:
+        image_button.delete()
+
+    self.VisualEditor_image_buttons = []
+
     for entity in self.scenes[scene].entities:
 
         kind = entity.kind
 
         if kind == self.constants.VISUAL_EDITOR_SPRITE:
             if self.load_all_media == 0:
-                agk.delete_sprite(entity.id)
+                try:
+                    agk.delete_sprite(entity.id)
+                except:
+                    pass
             else:
-                agk.set_sprite_visible(entity.id, 0)
-
+                try:
+                    agk.set_sprite_visible(entity.id, 0)
+                except:
+                    pass
         elif kind == self.constants.VISUAL_EDITOR_TEXT:
             if self.load_all_media == 0:
                 agk.delete_text(entity.id)

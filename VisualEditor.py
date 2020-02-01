@@ -21,6 +21,7 @@ class VisualEditor:
         self.constants = Constants()
         self.project_data = []
         self.overrideIndex = 0
+        self.VisualEditor_image_buttons = []
 
         self.VisualEditor_CustomResolutions = ""
         self.VisualEditor_SceneColours = ""
@@ -98,3 +99,7 @@ class VisualEditor:
 
     def get_entity_kind(self, entity_name, scene_id):
         return get_kind(self, entity_name, scene_id)
+
+    def update(self):
+        for image_button in self.VisualEditor_image_buttons:
+            image_button.update()

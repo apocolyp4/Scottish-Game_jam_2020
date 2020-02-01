@@ -1,6 +1,6 @@
 # import the math module
 import math
-from math import sin,cos,radians,degrees,pi,atan2
+from math import sin, cos, radians, degrees, pi, atan2
 
 def get_distance(x1, y1, x2, y2):
     b = abs(x1 - x2)

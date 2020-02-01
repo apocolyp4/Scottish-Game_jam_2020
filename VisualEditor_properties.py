@@ -5,6 +5,8 @@ class Constants:
         self.VISUAL_EDITOR_EDIT_BOX = 3
         self.VISUAL_EDITOR_VIRTUAL_BUTTON = 4
         self.VISUAL_EDITOR_PARTICLES = 5
+        self.VISUAL_EDITOR_IMAGE_BUTTON = 6
+        self.VISUAL_EDITOR_NODE = 7
         self.VISUAL_EDITOR_LOAD_FOR_SCENE = 0
         self.VISUAL_EDITOR_LOAD_ALL_MEDIA = 1
 

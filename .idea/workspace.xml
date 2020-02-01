@@ -2,15 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b20a6a18-becf-4011-ace1-dceadfb5b224" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Scottish-Game_jam_2020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Scottish-Game_jam_2020.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Border.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CollisionDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollisionDetection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sprite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/Text.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualEditor.py" beforeDir="false" afterPath="$PROJECT_DIR$/VisualEditor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VisualEditor_ImageButton.py" beforeDir="false" afterPath="$PROJECT_DIR$/VisualEditor_ImageButton.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appgamekit.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/appgamekit.pyd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appgamekit.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/appgamekit.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualEditor_Scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/VisualEditor_Scene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualEditor_Scene_Entities.py" beforeDir="false" afterPath="$PROJECT_DIR$/VisualEditor_Scene_Entities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualEditor_properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/VisualEditor_properties.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/networking.py" beforeDir="false" afterPath="$PROJECT_DIR$/networking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/data.agkd" beforeDir="false" afterPath="$PROJECT_DIR$/media/data.agkd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/data.agkd_backup" beforeDir="false" afterPath="$PROJECT_DIR$/media/data.agkd_backup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/default_particle.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,25 +132,45 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="381" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1580514130048" />
-    <state width="1259" height="154" key="GridCell.Tab.0.bottom" timestamp="1580517234730">
+    <state width="1259" height="132" key="GridCell.Tab.0.bottom" timestamp="1580564804411">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="154" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1580517234730" />
-    <state width="1259" height="154" key="GridCell.Tab.0.center" timestamp="1580517234729">
+    <state width="1259" height="132" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1580564804411" />
+    <state width="1259" height="132" key="GridCell.Tab.0.center" timestamp="1580564804411">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="154" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1580517234729" />
-    <state width="1259" height="154" key="GridCell.Tab.0.left" timestamp="1580517234728">
+    <state width="1259" height="132" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1580564804411" />
+    <state width="1259" height="132" key="GridCell.Tab.0.left" timestamp="1580564804410">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="154" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1580517234728" />
-    <state width="1259" height="154" key="GridCell.Tab.0.right" timestamp="1580517234729">
+    <state width="1259" height="132" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1580564804410" />
+    <state width="1259" height="132" key="GridCell.Tab.0.right" timestamp="1580564804411">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="154" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1580517234729" />
+    <state width="1259" height="132" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1580564804411" />
+    <state width="1244" height="200" key="GridCell.Tab.1.bottom" timestamp="1580561363051">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1244" height="200" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1580561363051" />
+    <state width="1244" height="200" key="GridCell.Tab.1.center" timestamp="1580561363051">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1244" height="200" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1580561363051" />
+    <state width="1244" height="200" key="GridCell.Tab.1.left" timestamp="1580561363050">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1244" height="200" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1580561363050" />
+    <state width="1244" height="200" key="GridCell.Tab.1.right" timestamp="1580561363051">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1244" height="200" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1580561363051" />
     <state x="149" y="0" key="SettingsEditor" timestamp="1580511274574">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="149" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1580511274574" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1580528946104">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1580528946104" />
   </component>
 </project>

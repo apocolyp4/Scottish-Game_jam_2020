@@ -1,31 +1,72 @@
-import copy
-from Calculations import *
+import appgamekit as agk
+from calculations import *
 
-def whereCanIGetTo1(self, sprite):
-    movementToTry_x = sprite.x - object.oldPos.x
-    movementToTry_y = sprite.y - object.oldPos.y
-    furthestAvailableLocationSoFar_x = 0
-    furthestAvailableLocationSoFar_y = 0
-    furthestAvailableLocationSoFar_x = object.oldPos_x
-    furthestAvailableLocationSoFar_x = object.oldPos_y
 
-    tempObject = copy.sprite
+def get_text_point_collision(text, point_x, point_y):
+    width = text.get_width()
+    height = text.get_height()
+    angle = text.get_angle()
 
-    length  = calculateDistance(0, 0, movementToTry.x, movementToTry.y)
+    x, y = text.get_centre_position()
+    collision = get_point_box_collision(point_x, point_y, x, y, width, height, angle)
+    return collision
 
-    numberOfStepsToBreakMovementInto = Floor(length  # * 2) + 1
-    oneStep as position
-    oneStep.x = movementToTry.x / numberOfStepsToBreakMovementInto
-    oneStep.y = movementToTry.y / numberOfStepsToBreakMovementInto
 
-    for i = 1 to  numberOfStepsToBreakMovementInto
-        positionToTry as position
-        positionToTry.x = object.oldPos.x + (oneStep.x * i)
-        positionToTry.y = object.oldPos.y + (oneStep.y * i)
-        SetSpritePosition(object.sprite, positionToTry.x, positionToTry.y)
+def get_sprite_point_collision(sprite, point_x, point_y):
+    width = sprite.get_width()
+    height = sprite.get_height()
+    angle = sprite.get_angle()
+    x, y = sprite.get_centre_position()
+    collision = get_point_box_collision(point_x, point_y, x, y, width, height, angle)
+    return collision
 
-        if (checkTileCollisions(object, 1) = 0)
-            furthestAvailableLocationSoFar = positionToTry
-            break
 
-return furthestAvailableLocationSoFar
+def get_point_box_collision(point_x, point_y, x, y, width, height, angle):
+    collision = True
+
+    velocity = get_velocity(angle, height / 2)
+    x1 = x + velocity[0]
+    y1 = y + velocity[1]
+
+    velocity = get_velocity(angle - 180, height / 2)
+    x2 = x + velocity[0]
+    y2 = y + velocity[1]
+
+    velocity = get_velocity(angle - 90, width / 2)
+    x3 = x + velocity[0]
+    y3 = y + velocity[1]
+
+    velocity = get_velocity(angle + 90, width / 2)
+    x4 = x + velocity[0]
+    y4 = y + velocity[1]
+
+    # Box top side
+    angle1 = get_angle(x1, y1, point_x, point_y)
+    angle1 = get_relative_angle(angle1, angle)
+
+    # Box bottom side
+    angle2 = get_angle(x2, y2, point_x, point_y)
+    angle2 = get_relative_angle(angle2, angle - 180)
+
+    # Box left side
+    angle3 = get_angle(x3, y3, point_x, point_y)
+    angle3 = get_relative_angle(angle3, angle - 90)
+
+    # Box right side
+    # Box left  side
+    angle4 = get_angle(x4, y4, point_x, point_y)
+    angle4 = get_relative_angle(angle4, angle + 90)
+
+    if angle1 > 270 or angle1 < 90:
+        collision = False
+
+    if angle2 > 270 or angle2 < 90:
+        collision = False
+
+    if angle3 > 270 or angle3 < 90:
+        collision = False
+
+    if angle4 > 270 or angle4 < 90:
+        collision = False
+
+    return collision

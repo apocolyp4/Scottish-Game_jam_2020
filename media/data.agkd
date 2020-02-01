@@ -111,51 +111,6 @@
 <entity>
 	<properties>
 			<type>sprite</>
-			<scene>0</>
-			<name>sprite 5</>
-			<x>250.0</>
-			<y>417.0</>
-			<size x>235.0</>
-			<size y>207.6</>
-			<scale x>1.0</>
-			<scale y>1.0</>
-			<offset x>117.5</>
-			<offset y>103.8</>
-			<angle>0.0</>
-			<depth>5000</>
-			<visible>1</>
-			<red>255</>
-			<green>255</>
-			<blue>255</>
-			<alpha>255</>
-			<locked>0</>
-			<fixed>0</>
-			<goto>0</>
-			<custom></>
-			<custom></>
-			<custom></>
-			<custom></>
-			<physics>0</>
-			<fliph>0</>
-			<flipv>0</>
-			<active>0</>
-			<collision>0</>
-			<angulardamping>0.0</>
-			<centreofmassx>0</>
-			<centreofmassy>0</>
-			<canrotate>1</>
-			<damping>0.0</>
-			<friction>0.0</>
-			<isbullet>0</>
-			<issensor>0</>
-			<mass>0.0</>
-			<restitution>0.0</>
-			<image>Images/water.png</>
-	</properties>
-</entity>
-<entity>
-	<properties>
-			<type>sprite</>
 			<scene>1</>
 			<name>sprite 6</>
 			<x>-174.0</>

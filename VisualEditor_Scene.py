@@ -94,6 +94,7 @@ def set_scene(self, scene_id):
     self.manager.currentScene = scene_id
     agk.set_clear_color(self.scenes[scene_id].clear_colour_red, self.scenes[scene_id].clear_colour_green, self.scenes[scene_id].clear_colour_blue)
 
+    count = 0
     for scene_entity in self.scenes[scene_id].entities:
 
         try:
@@ -112,6 +113,7 @@ def set_scene(self, scene_id):
                 if entity.sName[0:3] == "IB:":
                     entity.sName = entity.sName[3:]
                     kind = self.constants.VISUAL_EDITOR_IMAGE_BUTTON
+                    self.scenes[scene_id].entities[count].kind = self.constants.VISUAL_EDITOR_IMAGE_BUTTON
 
             # if agk.left(entity_name, 3) == "IB:":
             #     print(entity_name)

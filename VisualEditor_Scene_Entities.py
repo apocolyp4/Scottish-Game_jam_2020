@@ -76,8 +76,8 @@ def set_scene_text(self, scene_entity):
     else:
         agk.use_new_default_fonts(1)
 
-def set_scene_image_button(self, scene_entity):
 
+def set_scene_image_button(self, scene_entity):
     entity = self.VisualEditor_Entities[scene_entity.index]
     if entity.sImage == "Images/blank.jpg":
         entity.sImage = ""

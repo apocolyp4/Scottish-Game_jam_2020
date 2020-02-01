@@ -8,6 +8,7 @@ from CollisionDetection import *
 class ImageButton:
     def __init__(self, image_name, text):
         self.name = ""
+        self.image_name = image_name
         self.id = ""
         self.active = True
         self.images = []
@@ -24,7 +25,6 @@ class ImageButton:
         self.image_frame = 0
         self.pressed_frame = 0
         self.update_if_pressed = True
-
 
         self.pressed_alpha = 100
         self.pressed_frame_no = 0
@@ -54,21 +54,20 @@ class ImageButton:
         self.previous_state = False
         self.mode = 0
 
-        if image_name == "":
-            image_no = agk.create_image_color(255, 255, 255, 255)
+        if self.image_name == "":
+            self.image_no = agk.create_image_color(255, 255, 255, 255)
             self.width = 200
             self.height = 50
             self.border_visible = True
         else:
-            image_no = agk.load_image(image_name)
-            self.width = agk.get_image_width(image_no)
-            self.height = agk.get_image_weight(image_no)
+            self.image_no = agk.load_image(self.image_name)
+            self.width = agk.get_image_width(self.image_no)
+            self.height = agk.get_image_height(self.image_no)
             self.border_visible = False
 
-        self.images.append(image_no)
-
+        self.images.append(self.image_no)
         self.depth = 0
-        self.sprite = Sprite(image_no, 0, 0, self.width, self.height, self.angle, self.depth, False, True)
+        self.sprite = Sprite(self.image_no, 0, 0, self.width, self.height, self.angle, self.depth, False, True)
         self.sprite.set_color(self.image_color)
         self.pressed_frame = 0
         self.pressed_alpha = 100

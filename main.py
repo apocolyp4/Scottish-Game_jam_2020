@@ -9,15 +9,22 @@ from Sprite import Sprite
 import json
 
 with agk.Application():
-    status = 'server'
+    status = 'client'
 
     #setup the editor
-    text_image = agk.load_image("Images/greenCar.png")
-    test_sprite = Sprite(text_image, 10, 20, 11, 25, 0, 0, False, True) #Change visiible to False for invisible
 
     vis_editor = VisualEditor(0)
-    vis_editor.open_scene(0)
-    moon_poo = vis_editor.get_entity_id("MOON POO", 0)
+   # vis_editor.open_scene(0)
+
+    host_button = vis_editor.get_entity_id("IB:Lan Guy", 0)
+
+    while True:
+        if agk.get_raw_key_pressed(27):
+            agk.end()
+
+        vis_editor.update()
+        agk.sync()
+
 
     # game_network = Network("Awesome Dave", "10.241.90.69", 45000)
     # game_network.client()

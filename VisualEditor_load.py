@@ -167,6 +167,7 @@ def parse_entity_data(self, entity, data):
             elif data.tag == "alignment":
                 entity.alignment = int(float(data.value))
             elif data.tag == "text size":
+
                 entity.textSize = int(float(data.value))
             elif data.tag == "collision":
                 entity.collision = int(float(data.value))

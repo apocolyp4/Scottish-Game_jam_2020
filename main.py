@@ -29,20 +29,33 @@ with agk.Application():
     # game_network = Network("Awesome Dave", "10.241.90.69", 45000)
     # game_network.client()
 
-    if status is 'client':
-        #connection as client
-        game_network = Network("Awesome Rich", "10.241.90.69", 45000)
-        network_id = game_network.client()
-        iType = 1
-        State = 1
+    # Networking Code
     if status is 'server':
-        #connection as server
-        game_network = Network("Awesome Rich", "10.241.90.69", 45000)
+        # connection as server
+        game_network = Network("Game Deally", "10.241.90.69", 45000)
         network_id = game_network.host()
         iType = 0
-        State = 1
+    if status is 'client':
+        # connection as client
+        game_network = Network("Game Deally", "10.241.90.69", 45000)
+        network_id = game_network.client()
+        iType = 1
 
     while True:
+        #Networking Code
+        user_data_list = []
+        if iType is 0: #host
+            #Modify for more realistic use depending on number npcs
+            for x in range(6):
+                user_detail = {"sprite_name": str(x), "sprite_x": 700, "sprite_y": 400, "sprite_z": 0, "health": 123}
+                user_data_list.append(user_detail)
+        if iType is 1: #client
+            #create user dictionary for each user
+            #use data from each of the npc characters
+            #add them to a list of users
+            user_detail = {"sprite_name": "client", "sprite_x": 600, "sprite_y": 500, "sprite_z": 0, "health": 123}
+            user_data_list.append(user_detail)
+
         if agk.is_network_active(network_id) != 0:
             id = agk.get_network_first_client(network_id)
             #Get players online
@@ -50,43 +63,23 @@ with agk.Application():
                 print('ID = ' + str(id))
                 id = agk.get_network_next_client(network_id)
 
-            # Replace with message build code
-            # This section will be responsible
-            # For the handling of incoming data
-            # from the other player and the
-            # manipulation of sprites on the screen
-            user_detail = {"sprite_name": "fsds", "sprite_x": 0, "sprite_y": 0, "sprite_z": 0, "health": 123}
-            x = test_sprite.get_centre_x()
-            y = test_sprite.get_centre_y()
-            cmessage = agk.create_network_message()
-            agk.add_network_message_float(cmessage, x)
-            agk.add_network_message_float(cmessage, y)
-            agk.add_network_message_string(cmessage, json.dumps(user_detail))
-
-            agk.send_network_message(network_id, 0, cmessage)
+            for user_detail in user_data_list:
+                cmessage = agk.create_network_message()
+                agk.add_network_message_string(cmessage, json.dumps(user_detail))
+                agk.send_network_message(network_id, 0, cmessage)
 
             game_network.update()
             cmessage = agk.get_network_message(network_id)
-
             while cmessage != 0:
+                player_data = None
                 # Replace with message parsing code
                 # This are will be responsible for
                 # reading data from the queue and
                 # manipulating sprites
-                x = agk.get_network_message_float(cmessage)
-                y = agk.get_network_message_float(cmessage)
-                player_date = agk.get_network_message_string(cmessage)
-                player_obj = json.loads(player_date)
-                print(player_obj)
-                print(player_obj["sprite_name"])
-                print(player_obj["sprite_x"])
-                print(player_obj["sprite_y"])
-                print(player_obj["sprite_z"])
-                print(player_obj["health"])
-                print(str(x) + " " + str(y))
+                player_data = agk.get_network_message_string(cmessage)
+                player_obj = json.loads(player_data)
                 test_sprite.set_position(player_obj["sprite_x"], player_obj["sprite_y"])
                 # Replace with message parsing code
-
                 agk.delete_network_message(cmessage)
                 cmessage = agk.get_network_message(network_id)
 

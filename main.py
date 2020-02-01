@@ -2,6 +2,7 @@ import appgamekit as agk
 from SearchTree import SearchTree
 from VisualEditor_ImageButton import *
 from VisualEditor import VisualEditor
+from networking import Network
 from Text import Text
 
 with agk.Application():
@@ -65,8 +66,10 @@ with agk.Application():
     test_text = Text("cunty baws", Color(0, 0, 0, 255), 45, 100, 100, 0, True, True)
     test_text.set_string("mubs")
 
+    game_network = Network("Awesome Dave", "10.241.90.69", 45000)
+    game_network.client()
     while True:
-
+        game_network.update()
         agk.sync()
         if agk.get_raw_key_pressed(27):
             break

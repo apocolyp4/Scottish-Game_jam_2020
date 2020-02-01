@@ -8,7 +8,6 @@ class ImageButton:
     def __init__(self, image_name, text):
         self.name = ""
         self.id = ""
-        self.sprite = -1
         self.images = []
         self.depth = 0
         self.active = True
@@ -30,6 +29,7 @@ class ImageButton:
         self.width = 200
         self.height = 50
         self.pressed_alpha = 0
+
 
         self.state = False
         self.pressed = False
@@ -56,8 +56,8 @@ class ImageButton:
             self.height = agk.get_image_weight(image_no)
 
         self.images.append(image_no)
-        self.sprite = agk.create_sprite(image_no)
 
+        self.depth = 0
         self.sprite = Sprite(image_no, 0, 0, self.width, self.height, self.angle, self.depth, False, True)
         self.sprite.set_color(self.image_color)
         self.pressed_frame = 0
@@ -82,7 +82,7 @@ class ImageButton:
             self.border_sprites.append(border_sprite)
 
         self.update_if_pressed = True
-        self.set_depth(0)
+
 
     def make_switch(self, x, y, width, height, alignment, depth ):
         self.is_switch = True
@@ -99,7 +99,7 @@ class ImageButton:
 
     def set_depth(self, depth):
         self.depth = depth
-        self.sprite.set_depth(depth)
+        self.sprite.set_depth(self.depth)
         self.text.set_depth(self.depth)
 
         for border_sprite in self.border_sprites:
@@ -119,7 +119,6 @@ class ImageButton:
         x = self.sprite.get_centre_x() + self.text_offset_x
         y = self.sprite.get_centre_y() + self.text_offset_y
         self.text.set_position(x, y)
-
 
     def update_position(self):
         self.set_image_button_position(self.x, self.y)

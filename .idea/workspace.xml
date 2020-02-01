@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b20a6a18-becf-4011-ace1-dceadfb5b224" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VisualEditor.py" beforeDir="false" afterPath="$PROJECT_DIR$/VisualEditor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VisualEditor_ImageButton.py" beforeDir="false" afterPath="$PROJECT_DIR$/VisualEditor_ImageButton.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VisualEditor_Scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/VisualEditor_Scene.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VisualEditor_Scene_Entities.py" beforeDir="false" afterPath="$PROJECT_DIR$/VisualEditor_Scene_Entities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VisualEditor_load.py" beforeDir="false" afterPath="$PROJECT_DIR$/VisualEditor_load.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VisualEditor_utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/VisualEditor_utilities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/Dh2ilPwW0AEZp6_.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/Dras5YRW4AID3T-.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/Images/Sky-Blue-Sky.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/Images/blank.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/Images/greenCar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/Images/orangeCar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/Images/water.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/media/data.agkd" beforeDir="false" afterPath="$PROJECT_DIR$/media/data.agkd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/data.agkd_backup" beforeDir="false" afterPath="$PROJECT_DIR$/media/data.agkd_backup" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,22 +123,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1580597113121" />
-    <state width="1259" height="162" key="GridCell.Tab.0.bottom" timestamp="1580601078240">
+    <state width="1259" height="162" key="GridCell.Tab.0.bottom" timestamp="1580601492258">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="162" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1580601078240" />
-    <state width="1259" height="162" key="GridCell.Tab.0.center" timestamp="1580601078240">
+    <state width="1259" height="162" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1580601492258" />
+    <state width="1259" height="162" key="GridCell.Tab.0.center" timestamp="1580601492257">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="162" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1580601078240" />
-    <state width="1259" height="162" key="GridCell.Tab.0.left" timestamp="1580601078239">
+    <state width="1259" height="162" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1580601492257" />
+    <state width="1259" height="162" key="GridCell.Tab.0.left" timestamp="1580601492257">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="162" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1580601078239" />
-    <state width="1259" height="162" key="GridCell.Tab.0.right" timestamp="1580601078240">
+    <state width="1259" height="162" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1580601492257" />
+    <state width="1259" height="162" key="GridCell.Tab.0.right" timestamp="1580601492257">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="162" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1580601078240" />
+    <state width="1259" height="162" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1580601492257" />
     <state width="1259" height="203" key="GridCell.Tab.1.bottom" timestamp="1580598575359">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

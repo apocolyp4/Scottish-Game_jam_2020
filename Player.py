@@ -32,3 +32,6 @@ class Player:
 
         agk.set_view_offset(self.x, self.y)
 
+        if controls.game_pad.right_trigger > 0.1:
+            agk.print_value("fire")
+

@@ -2,81 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b20a6a18-becf-4011-ace1-dceadfb5b224" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Controls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GamePad.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/Player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VisualEditor.py" beforeDir="false" afterPath="$PROJECT_DIR$/VisualEditor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/Images/Players/Man_Gun.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/Images/Players/Man_Gun.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/Images/Players/Woman_Gun.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/Images/Players/Woman_Gun.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/data.agkd" beforeDir="false" afterPath="$PROJECT_DIR$/media/data.agkd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/data.agkd_backup" beforeDir="false" afterPath="$PROJECT_DIR$/media/data.agkd_backup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/planks-button-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/planks-button-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/planks-button-small-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/planks-button-small-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/planks-dialog-window.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/planks-header.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/planks-panel-large.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/planks-panel-medium.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/planks-panel-small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-1-star-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-1-star.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-2-stars-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-2-stars.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-3-stars-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-3-stars.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-big-star-center.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-big-star-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-big-star-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-cancel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-controls.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-delete.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-download.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-home.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-levels.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-minus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-music.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-ok.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-pause.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-plus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-restart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-scroll-h.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-scroll-v.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-share.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-shop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-sound.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-square.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button-up.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-checbox-checked.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-checkbox.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-input-field.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-level-icon-placeholder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-panel-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-panel-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-panel-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-panel-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-progress-bar-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-progress-bar-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-progress-bar-panel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-radio-checked.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-radio.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-score-panel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-scroll-h.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-scroll-v.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-tab-0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-tab-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-tab-panel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-toggle-off.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/wood-toggle-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GamePad.py" beforeDir="false" afterPath="$PROJECT_DIR$/GamePad.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,22 +125,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1580597113121" />
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1580616626690">
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1580617568492">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1580616626690" />
-    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1580616626689">
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1580617568492" />
+    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1580617568492">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1580616626689" />
-    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1580616626689">
+    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1580617568492" />
+    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1580617568492">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1580616626689" />
-    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1580616626689">
+    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1580617568492" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1580617568492">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1580616626689" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1580617568492" />
     <state width="1259" height="203" key="GridCell.Tab.1.bottom" timestamp="1580603496312">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

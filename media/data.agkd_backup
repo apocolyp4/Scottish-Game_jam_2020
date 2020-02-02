@@ -115,8 +115,8 @@
 			<name>text 0</>
 			<x>384.0</>
 			<y>0.0</>
-			<size x>559.8</>
-			<size y>89.1</>
+			<size x>557.0</>
+			<size y>89.0</>
 			<scale x>1.0</>
 			<scale y>1.0</>
 			<offset x>0.0</>
@@ -137,7 +137,7 @@
 			<custom></>
 			<text>Choose Your Role</>
 			<alignment>0</>
-			<text size>89.1</>
+			<text size>89.0</>
 	</properties>
 </entity>
 <entity>
@@ -686,7 +686,7 @@
 			<scene>1</>
 			<name>sprite 17</>
 			<x>1024.0</>
-			<y>-0.0</>
+			<y>0.0</>
 			<size x>128.0</>
 			<size y>128.0</>
 			<scale x>1.0</>
@@ -731,7 +731,7 @@
 			<scene>1</>
 			<name>Girl</>
 			<x>384.0</>
-			<y>192.0</>
+			<y>384.0</>
 			<size x>128.0</>
 			<size y>128.0</>
 			<scale x>1.0</>
@@ -1684,7 +1684,7 @@
 			<offset x>64.0</>
 			<offset y>1061.0</>
 			<angle>0.0</>
-			<depth>5000</>
+			<depth>400</>
 			<visible>1</>
 			<red>255</>
 			<green>255</>
@@ -1856,7 +1856,7 @@
 			<scene>1</>
 			<name>sprite 44</>
 			<x>-448.0</>
-			<y>-0.0</>
+			<y>0.0</>
 			<size x>1215.0</>
 			<size y>712.0</>
 			<scale x>1.0</>

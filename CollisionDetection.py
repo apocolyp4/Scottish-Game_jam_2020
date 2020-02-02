@@ -1,6 +1,6 @@
 import appgamekit as agk
 from calculations import *
-
+import copy
 
 def get_text_point_collision(text, point_x, point_y):
     width = text.get_width()
@@ -70,3 +70,14 @@ def get_point_box_collision(point_x, point_y, x, y, width, height, angle):
         collision = False
 
     return collision
+
+
+
+def check_wall_collision(sprite_id, walls):
+    for wall in walls:
+        collision = agk.get_sprite_collision(sprite_id, wall)
+        if collision == 1:
+            return True
+
+    return False
+

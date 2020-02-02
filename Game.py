@@ -7,13 +7,14 @@ from Sprite import Sprite
 from networking import Network
 from Text import Text
 from Controls import Controls
+from Walls import Walls
 
 class Game:
     def __init__(self, vis_editor):
         self.controls = Controls()
         self.type = ""
         self.vis_editor = vis_editor
-        self.walls = []
+        self.walls = Walls(self.vis_editor)
 
     def spawn_player(self, type):
 
@@ -29,8 +30,8 @@ class Game:
             self.player = self.boy_player
 
     def start(self, type):
-        self.walls = []
         self.vis_editor.open_scene(1)
+        self.walls.load()
 
         if type == "boy" or type == "girl":
             self.spawn_player(type)
@@ -40,7 +41,7 @@ class Game:
     def update(self):
         while True:
             self.controls.update()
-            self.player.update(self.controls)
+            self.player.update(self.controls, self.walls.walls)
 
 
             agk.sync()

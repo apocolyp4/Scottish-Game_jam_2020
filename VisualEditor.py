@@ -44,6 +44,7 @@ class VisualEditor:
         self.VisualEditor_Lines = [""] * 100000
         self.VisualEditor_EntitiesIndex = 0
         self.VisualEditor_Buttons = 1
+        self.VisualEditor_scene_id = -1
 
         self.load_all_media = load_all_media
 
@@ -91,6 +92,7 @@ class VisualEditor:
         setup_scenes(self)
 
     def open_scene(self, scene_id):
+        self.VisualEditor_scene_id = scene_id
         set_scene(self, scene_id)
 
     def get_entity_id(self, entity_name, scene_id):

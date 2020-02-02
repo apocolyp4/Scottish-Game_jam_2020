@@ -1,6 +1,6 @@
 import appgamekit as agk
 
-class VisualEditor:
+class Player:
     def __init__(self, name):
         self.name = name
         self.health = 100

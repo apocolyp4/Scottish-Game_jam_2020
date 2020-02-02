@@ -6,7 +6,7 @@ class Text:
         self.text = text
         self.x = x
         self.y = y
-
+        self.active = True
         self.old_x = x
         self.old_y = y
 
@@ -76,7 +76,7 @@ class Text:
 
     def set_visible(self, visible):
         self.visible = visible
-        if self.visible:
+        if self.visible and self.active:
             agk.set_text_visible(self.id, 1)
         else:
             agk.set_text_visible(self.id, 0)
@@ -107,7 +107,11 @@ class Text:
         return angle
 
     def set_alpha(self, alpha):
-        self.color.alpha = alpha
+        if self.active:
+            self.color.alpha = alpha
+        else:
+            self.color.alpha = 0
+
         self.set_color(self.color)
 
     def set_color(self, color):
@@ -124,3 +128,6 @@ class Text:
 
     def delete(self):
         agk.delete_text(self.id)
+
+    def set_active(self, active):
+        self.active = active

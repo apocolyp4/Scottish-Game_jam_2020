@@ -6,6 +6,7 @@ from Sprite import Sprite
 from networking import Network
 from Text import Text
 from Sprite import Sprite
+from Game import Game
 import json
 
 with agk.Application():
@@ -16,10 +17,22 @@ with agk.Application():
     vis_editor = VisualEditor(0)
     # vis_editor.open_scene(0)
 
-    #host_button = vis_editor.get_entity_id("IB:Lan Guy", 0)
+    boy_button = vis_editor.get_entity_id("IB:Boy", 0)
+    girl_button = vis_editor.get_entity_id("IB:Girl", 0)
+    boy_button.text.set_active(False)
+    girl_button.text.set_active(False)
+
 
     while True:
         if agk.get_raw_key_pressed(27):
+
+            if boy_button.pressed:
+                start_game(vis_editor, "boy")
+            elif girl_button.pressed:
+                start_game(vis_editor, "girl")
+            elif dungeon_master_button.pressed:
+                start_game(vis_editor ,"dungeon master")
+
             agk.end()
 
         vis_editor.update()
@@ -82,7 +95,6 @@ with agk.Application():
                 # Replace with message parsing code
                 agk.delete_network_message(cmessage)
                 cmessage = agk.get_network_message(network_id)
-
 
         if agk.get_raw_key_pressed(27):
             break

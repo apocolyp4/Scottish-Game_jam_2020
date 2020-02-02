@@ -80,9 +80,12 @@ def set_scene_text(self, scene_entity):
 def set_scene_image_button(self, scene_entity):
     entity = self.VisualEditor_Entities[scene_entity.index]
     if entity.sImage == "Images/blank.jpg":
-        entity.sImage = ""
+        file_name = ""
+    else:
+        image = load_image(self, entity.sImage)
+        file_name = agk.get_image_filename(image)
 
-    scene_entity.id = ImageButton(entity.sImage, entity.sName)
+    scene_entity.id = ImageButton(file_name, entity.sName[3:])
     scene_entity.id.set_position(entity.x, entity.y)
     scene_entity.id.set_size(entity.sizeX, entity.sizeY)
     self.VisualEditor_image_buttons.append(scene_entity.id)

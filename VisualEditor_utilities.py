@@ -150,7 +150,8 @@ def VisualEditor_UpdateForDifferentResolution(self, entity, id, kind):
         y = agk.get_text_y(id) / self.VisualEditor_BaseHeight
 
         new_pos_x = x * self.VisualEditor_TargetWidth
-        new_pos_y = y *self. VisualEditor_TargetHeight
+        new_pos_y = y * self. VisualEditor_TargetHeight
+        new_pos_y = y * self. VisualEditor_TargetHeight
 
         agk.set_text_position(id, self.VisualEditor_BorderInPixels + new_pos_x, self.VisualEditor_BorderInPixelsY + new_pos_y)
 

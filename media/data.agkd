@@ -5,8 +5,8 @@
 			<orientation>Landscape</>
 			<autosave>1</>
 			<autoupdate>0</>
-			<grid>0</>
-			<gridsnap>0</>
+			<grid>1</>
+			<gridsnap>1</>
 			<gridwidth>64.0</>
 			<gridheight>64.0</>
 			<gridred>64</>
@@ -14,23 +14,23 @@
 			<gridblue>255</>
 			<gridoriginx>0.0</>
 			<gridoriginy>0.0</>
-			<scene colours>255 255 255 255 255 255 </>
-			<scene sizes>0 1 1280 720 1 1 1280 720 </>
+			<scene colours>255 255 255 </>
+			<scene sizes>0 1 1280 720 </>
 	</settings>
 </project>
 <entity>
 	<properties>
 			<type>sprite</>
 			<scene>0</>
-			<name>IB:MOON POO</>
-			<x>807.0</>
-			<y>26.0</>
-			<size x>427.0</>
-			<size y>238.1</>
+			<name>IB:Girl</>
+			<x>192.0</>
+			<y>64.0</>
+			<size x>192.0</>
+			<size y>192.0</>
 			<scale x>1.0</>
 			<scale y>1.0</>
-			<offset x>213.5</>
-			<offset y>119.0</>
+			<offset x>96.0</>
+			<offset y>96.0</>
 			<angle>0.0</>
 			<depth>5000</>
 			<visible>1</>
@@ -60,22 +60,22 @@
 			<issensor>0</>
 			<mass>0.0</>
 			<restitution>0.0</>
-			<image>Images/blank.jpg</>
+			<image>Images/Player Select Icons/girl icon.png</>
 	</properties>
 </entity>
 <entity>
 	<properties>
 			<type>sprite</>
 			<scene>0</>
-			<name>IB:button</>
-			<x>963.0</>
-			<y>529.0</>
-			<size x>160.0</>
-			<size y>89.2</>
+			<name>IB:Man</>
+			<x>576.0</>
+			<y>64.0</>
+			<size x>189.0</>
+			<size y>189.0</>
 			<scale x>1.0</>
 			<scale y>1.0</>
-			<offset x>80.0</>
-			<offset y>44.6</>
+			<offset x>94.5</>
+			<offset y>94.5</>
 			<angle>0.0</>
 			<depth>5000</>
 			<visible>1</>
@@ -105,51 +105,6 @@
 			<issensor>0</>
 			<mass>0.0</>
 			<restitution>0.0</>
-			<image>Images/blank.jpg</>
-	</properties>
-</entity>
-<entity>
-	<properties>
-			<type>sprite</>
-			<scene>1</>
-			<name>sprite 6</>
-			<x>-174.0</>
-			<y>-47.0</>
-			<size x>2144.0</>
-			<size y>1424.0</>
-			<scale x>1.0</>
-			<scale y>1.0</>
-			<offset x>1072.0</>
-			<offset y>712.0</>
-			<angle>0.0</>
-			<depth>5000</>
-			<visible>1</>
-			<red>255</>
-			<green>255</>
-			<blue>255</>
-			<alpha>255</>
-			<locked>0</>
-			<fixed>0</>
-			<goto>0</>
-			<custom></>
-			<custom></>
-			<custom></>
-			<custom></>
-			<physics>0</>
-			<fliph>0</>
-			<flipv>0</>
-			<active>0</>
-			<collision>0</>
-			<angulardamping>0.0</>
-			<centreofmassx>0</>
-			<centreofmassy>0</>
-			<canrotate>1</>
-			<damping>0.0</>
-			<friction>0.0</>
-			<isbullet>0</>
-			<issensor>0</>
-			<mass>0.0</>
-			<restitution>0.0</>
-			<image>Images/Sky-Blue-Sky.jpg</>
+			<image>Images/Player Select Icons/man icon.png</>
 	</properties>
 </entity>

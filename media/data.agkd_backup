@@ -5,8 +5,8 @@
 			<orientation>Landscape</>
 			<autosave>1</>
 			<autoupdate>0</>
-			<grid>0</>
-			<gridsnap>0</>
+			<grid>1</>
+			<gridsnap>1</>
 			<gridwidth>64.0</>
 			<gridheight>64.0</>
 			<gridred>64</>
@@ -23,8 +23,8 @@
 			<type>sprite</>
 			<scene>0</>
 			<name>IB:Girl</>
-			<x>224.0</>
-			<y>243.0</>
+			<x>192.0</>
+			<y>256.0</>
 			<size x>259.0</>
 			<size y>259.0</>
 			<scale x>1.0</>
@@ -68,14 +68,14 @@
 			<type>sprite</>
 			<scene>0</>
 			<name>IB:Man</>
-			<x>672.0</>
-			<y>214.0</>
-			<size x>273.0</>
-			<size y>273.0</>
+			<x>640.0</>
+			<y>192.0</>
+			<size x>267.0</>
+			<size y>267.0</>
 			<scale x>1.0</>
 			<scale y>1.0</>
-			<offset x>136.5</>
-			<offset y>136.5</>
+			<offset x>133.5</>
+			<offset y>133.5</>
 			<angle>0.0</>
 			<depth>5000</>
 			<visible>1</>

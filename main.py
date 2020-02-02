@@ -14,7 +14,7 @@ with agk.Application():
     #setup the editor
 
     vis_editor = VisualEditor(0)
-   # vis_editor.open_scene(0)
+    # vis_editor.open_scene(0)
 
     #host_button = vis_editor.get_entity_id("IB:Lan Guy", 0)
 

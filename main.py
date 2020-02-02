@@ -5,7 +5,6 @@ from VisualEditor import VisualEditor
 from Sprite import Sprite
 from networking import Network
 from Text import Text
-from Sprite import Sprite
 from Game import Game
 import json
 
@@ -15,25 +14,25 @@ with agk.Application():
     #setup the editor
 
     vis_editor = VisualEditor(0)
-    # vis_editor.open_scene(0)
+    game = Game(vis_editor)
 
     boy_button = vis_editor.get_entity_id("IB:Boy", 0)
     girl_button = vis_editor.get_entity_id("IB:Girl", 0)
+    dungeon_master_button = vis_editor.get_entity_id("IB:DungeonMaster", 0)
     boy_button.text.set_active(False)
     girl_button.text.set_active(False)
-
+    dungeon_master_button.text.set_active(False)
 
     while True:
         if agk.get_raw_key_pressed(27):
-
-            if boy_button.pressed:
-                start_game(vis_editor, "boy")
-            elif girl_button.pressed:
-                start_game(vis_editor, "girl")
-            elif dungeon_master_button.pressed:
-                start_game(vis_editor ,"dungeon master")
-
             agk.end()
+
+        if boy_button.pressed:
+            game.start("boy")
+        elif girl_button.pressed:
+            game.start("girl")
+        elif dungeon_master_button.pressed:
+             game.start("dungeon master")
 
         vis_editor.update()
         agk.sync()

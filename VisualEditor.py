@@ -9,6 +9,7 @@ from VisualEditor_utilities import *
 class VisualEditor:
     def __init__(self, load_all_media):
         self.pairs = [[0 for x in range(2)] for y in range(2)] #String
+        self.walls = []
         self.scenes = [Scene()]
         self.VisualEditor_Entities = []
         self.VisualEditor_Characters = [""]

@@ -41,3 +41,5 @@ __pycache__/Border.cpython-37.pyc
 .idea/workspace.xml
 .idea/Scottish-Game_jam_2020.iml
 .idea/misc.xml
+*.pyc
+*.pyc
